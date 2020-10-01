@@ -2,6 +2,17 @@
 #FONTS
 \*------------------------------------*/
 
+@font-face {
+    font-family: "Inter Web";
+    font-weight: 400;
+    src: url("../fonts/Inter-Regular.woff2") format("woff2");
+}
+@font-face {
+    font-family: "Inter Web";
+    font-weight: 600;
+    src: url("../fonts/Inter-SemiBold.woff2") format("woff2");
+}
+
 /*------------------------------------*\
 #Variables
 \*------------------------------------*/
@@ -25,12 +36,12 @@
 html {
     font-size: 16px;
     line-height: 1.5;
-    font-family: Helvetica, arial, sans-serif;
-    color: grey;
+    font-family: "Inter Web", Helvetica, arial, sans-serif;
+    color: #20223a;
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-color: white;
+    background-color: #F5F6FA;
 }
 
 *,
@@ -47,13 +58,13 @@ html {
 */
 
 ::-moz-selection {
-    background: HotPink;
+    background: #3385FF;
     color: white;
     text-shadow: none;
 }
 
 ::selection {
-    background: HotPink;
+    background: #3385FF;
     color: white;
     text-shadow: none;
 }
@@ -61,7 +72,10 @@ html {
 /*------------------------------------*\
 #Elements
 \*------------------------------------*/
-
+label,
+input {
+    display: block;
+}
 /*
 Elements: Images
 ---
@@ -158,18 +172,18 @@ hr {
 }
 
 a {
-    color: HotPink;
+    color: #3385FF;
     transition: all .1s ease-in-out;
 }
 
 a:visited,
 a:active {
-    color: HotPink;
+    color: #3385FF;
 }
 
 a:hover,
 a:focus {
-    color: DeepPink;
+    color: #4F95FF;
 }
 
 /*------------------------------------*\
@@ -431,7 +445,27 @@ a:focus {
     ---
     Website main logo
 */
+.c-logo {
+    display: flex;
+    height: 24px;
+    justify-content: center;
+}
+.c-logo__symbol {
+    height: 100%;
+    display: block;
+}
+.c-logo__path{
 
+}
+.c-logo__path--1{
+    fill: #20223A;
+}
+.c-logo__path--2{
+    fill: #3385FF;
+}
+.c-logo__path--3{
+    fill: #1B4186;
+}
 /*
     Component: Card
     ---
@@ -451,7 +485,23 @@ a:focus {
 */
 
 .c-input {
-
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 100%;
+    border-radius: 3px;
+    border: 2px solid #E2E3E7;
+    font-family: inherit;
+    color: #B5B6C0;
+    font-size: 16px ;
+    line-height: 24px;
+    padding: 10px;
+    outline: none;
+    
+}
+.c-input:focus {
+    border-color: #3385FF;
+    box-shadow: 0 0 3px #3385FF4D;
 }
 
 .c-input:focus {
@@ -464,7 +514,15 @@ a:focus {
 */
 
 .c-label {
+    font-size: 14px;
+    line-height: 16px;
+    margin-bottom: 8px;
+    color: #606274;
 
+}
+.c-label--option {
+    margin-bottom: 0;
+    margin-left: 8px;
 }
 
 /* If a input is focused within the form-field class change te color of the label */
@@ -473,6 +531,10 @@ a:focus {
 
 }
 
+.c-form-field--option{
+    display: flex;
+    align-items: center;
+}
 /*
     Component: Button
     ---
@@ -480,24 +542,79 @@ a:focus {
 */
 
 .c-button {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 600;
+    background-color: #3385FF;
+    color: #FFFFFF;
+    border-radius: 3px;
+    border: #2E77E6;
+    width: 100%;
+    padding: 12px;
+    outline: none;
 
 }
 
 .c-button:hover {
+    background-color: #4F95FF;
+    
 
 }
 
 .c-button:focus {
-
+    box-shadow:0 0 3px #3385FF4D
 }
 
 .c-button:active {
+    background-color: #2E77E6;
 
 }
 
 .c-button--block {
 
 }
+
+/*CARD*/
+
+.c-card{
+    background-color: #FFFFFF;
+
+    border-radius: 3px;
+    box-shadow: 0 2px 4px #00000012;
+    border: 1px solid #0000000D
+}
+.c-card__body {
+    padding: 24px;
+}
+.c-card__title {
+    line-height: 24px;
+    font-weight: 600;
+    margin: 0;
+    padding-top: 24px;
+    
+}
+.c-card__header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.c-card__footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid #E2E3E7;
+    padding-top: 24px;
+    text-align: center;
+}
+@media (min-width: 576px) {
+    .c-card__body {
+        padding: 48px;
+    }
+    .c-card__title {
+        padding-top: 48px;
+    }
+}
+
 
 /*------------------------------------*\
 #UTILITIES
@@ -515,6 +632,9 @@ a:focus {
 
 .u-color-neutral-dark {
     color: Black;
+}
+.u-color-neutral-grey {
+    color: #757787;
 }
 
 /*
